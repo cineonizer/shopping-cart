@@ -1,0 +1,28 @@
+// @mixin to do
+
+.home {
+  .featured-image {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateY(0%);
+    transition: transform cubic-bezier(0.9, 0, 0.34, 0.42) .9s;
+  }
+
+  .featured-image:active {
+    transform: translateY(-100%);
+  }
+
+  video {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
