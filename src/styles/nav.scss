@@ -1,17 +1,11 @@
 @use './colors';
+@use './mixins';
 
 nav {
   display: flex;
 
   .brand-name {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 3.25em;
-    letter-spacing: -0.11em;
-    text-decoration: none;
-    color: colors.$text-color;
-    margin-right: 1em;
-    user-select: none;
+    @include mixins.brand-name();
   }
 
   ul {
@@ -29,15 +23,15 @@ nav {
 
   .tab {
     text-decoration: none;
-    color: colors.$text-color;
+    color: colors.$black-font-color;
     transition: color 0.15s ease-in-out;
   }
 
   .tab:hover {
-    color: colors.$hover-color;
+    color: colors.$hover-font-color;
   }
 
   .tab::selection {
-    @include colors.selection-color;
+    @include mixins.selection-color();
   }
 }

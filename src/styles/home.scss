@@ -1,28 +1,33 @@
-// @mixin to do
+@use './colors';
+@use './mixins';
 
 .home {
-  .featured-image {
-    object-fit: cover;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
+  .welcome-container {
+    @include mixins.center();
     transform: translateY(0%);
     transition: transform cubic-bezier(0.9, 0, 0.34, 0.42) .9s;
+    background-image: url("../components/assets/images/featured.jpeg");
+    background-size: cover;
   }
-
-  .featured-image:active {
+  
+  .welcome-container:active {
     transform: translateY(-100%);
+  }
+  
+  .welcome-message-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .welcome-message-one {
+    @include mixins.brand-name();
+    color: colors.$white-font-color;
   }
 
   video {
-    object-fit: cover;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
+    @include mixins.center();
     z-index: -1;
   }
 }

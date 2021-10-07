@@ -1,9 +1,5 @@
-$text-color: #000000;
-$hover-color: #4eab6d;
-$selection-color: #000000;
+$black-font-color: #000000;
+$white-font-color: #FFFFFF;
+$hover-font-color: #4eab6d;
+$selection-background-color: #000000;
 $selection-font-color: #FFFFFF;
-
-@mixin selection-color {
-  background-color: $text-color;
-  color: $selection-font-color;
-}
