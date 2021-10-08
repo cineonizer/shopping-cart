@@ -6,16 +6,19 @@ import '../styles/home.scss';
 const Home = () => {
   return (
     <div className="home">
-      <div className="welcome-container">
-        <div className="welcome-message-container">
-          <div className="welcome-message-one">
-            endless. luxury.
+      <div className="welcome">
+        <div className="welcome-container">
+          <div className="welcome-message-container">
+            <span className="welcome-message">endless.</span>
+            <span className="welcome-message">luxury.</span>
           </div>
         </div>
       </div>
-      <video className="videoTag" autoPlay loop muted>
-        <source src={videoSource} type="video/mp4" />
-      </video>
+      <div className="main">
+        <video className="videoTag" autoPlay loop muted>
+          <source src={videoSource} type="video/mp4" />
+        </video>
+      </div>
     </div>
   );
 };
