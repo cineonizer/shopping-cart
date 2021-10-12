@@ -1,40 +1,38 @@
 @use './colors';
 @use './mixins';
+@use './resolutions';
 
 .home {
-  .welcome {
-    .welcome-container {
+  font-family: univers;
+  .welcome-screen {
+    .welcome-screen-container {
       @include mixins.center();
       transform: translateY(0%);
       transition: transform cubic-bezier(0.9, 0, 0.34, 0.42) 0.9s;
-      background-image: url('../components/assets/images/featured.jpeg');
+      background-image: url('../assets/images/featured.jpeg');
       background-size: cover;
     }
 
-    .welcome-container:active {
-      transform: translateY(-100%);
-    }
-
-    .welcome-message-container {
+    .welcome-screen-message-container {
       @include mixins.brand-name();
-      color: colors.$white-font-color;
+      color: colors.$welcome-screen-font-color;
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-    .welcome-message {
+    .welcome-screen-message {
       opacity: 0;
       animation: fade-in 1.2s linear forwards;
       padding-right: 0.2em;
     }
 
-    .welcome-message:nth-child(1) {
+    .welcome-screen-message:nth-child(1) {
       animation-delay: 400ms;
     }
 
-    .welcome-message:nth-child(2) {
+    .welcome-screen-message:nth-child(2) {
       animation-delay: 1200ms;
     }
 
@@ -47,7 +45,42 @@
       }
     }
   }
+
   .main {
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 5vh;
+
+      img {
+        width: resolutions.$main-container-width;
+        height: auto;
+      }
+
+      .main-message {
+        width: resolutions.$main-container-width;
+        height: 100%;
+        margin-top: 10vh;
+        text-align: center;
+        font-size: 1.3em;
+      }
+
+      .main-message::selection {
+        @include mixins.selection-color();
+      }
+
+      @media screen and (max-width: resolutions.$main-container-width) {
+        img {
+          width: 100%;
+          height: auto;
+        }
+        .main-message {
+          width: 100%;
+        }
+      }
+    }
+
     video {
       @include mixins.center();
       z-index: -1;

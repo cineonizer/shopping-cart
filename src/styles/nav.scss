@@ -3,16 +3,20 @@
 
 nav {
   display: flex;
+  justify-content: space-between;
+  margin: 2.5vh 2.5vw 0;
 
   .brand-name {
     @include mixins.brand-name();
+    display: flex;
+    align-items: flex-end;
   }
 
   ul {
     margin: 0; /* To remove default margin */ 
     padding: 0; /* To remove default left padding */
     font-family: univers;
-    font-size: 1.25em;
+    font-size: 1em;
     list-style: none;
     width: 10em;
     display: flex;
@@ -23,7 +27,7 @@ nav {
 
   .tab {
     text-decoration: none;
-    color: colors.$black-font-color;
+    color: colors.$nav-font-color;
     transition: color 0.15s ease-in-out;
   }
 
