@@ -1,23 +1,31 @@
-import React, { useState, useEffect } from 'react';
-import videoSource from '../assets/videos/film-burns.mp4';
-import mainImageSource from '../assets/images/main.jpeg';
+import React, { useEffect } from 'react';
+import backgroundVideo from '../assets/videos/film-burns.mp4';
+import featuredImage from '../assets/images/featured.jpeg';
+import shopNowImage from '../assets/images/shopnow.jpeg';
+import image1 from '../assets/images/slide-1.jpeg';
+import image2 from '../assets/images/slide-2.jpeg';
+import image3 from '../assets/images/slide-3.jpeg';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.scss';
 import '../styles/home.scss';
 
 const Home = () => {
   useEffect(() => {
-    document.body.style.overflow = 'hidden';
-
     const welcomeScreen = document.querySelector('.welcome-screen-container');
+
+    // deactivates the scroll because the user can scroll the div behind
+    // document.body.style.overflow = 'hidden';
 
     // a function that will translate the welcome screen
     const setTransform = () => {
       welcomeScreen.style.transform = 'translateY(-100%)';
+      // a timeout before the user is allowed to start scrolling
       setTimeout(() => {
         document.body.style.overflow = '';
       }, 1100);
     };
 
-    // a timeout to have the welcome screen display message before user is allowed to interact to swipe away the screen
+    // a timeout so that the welcome screen can fully display before user is allowed to interact
     setTimeout(() => {
       welcomeScreen.addEventListener('wheel', setTransform);
       welcomeScreen.addEventListener('click', setTransform);
@@ -30,7 +38,7 @@ const Home = () => {
 
     // when component is unmounted remove the event listeners to clean up
     return () => {
-      welcomeScreen.removeEventListener('scroll', setTransform);
+      welcomeScreen.removeEventListener('wheel', setTransform);
       welcomeScreen.removeEventListener('click', setTransform);
     };
   }, []);
@@ -40,14 +48,16 @@ const Home = () => {
       <div className="welcome-screen">
         <div className="welcome-screen-container">
           <div className="welcome-screen-message-container">
-            <span className="welcome-screen-message">endless.</span>
-            <span className="welcome-screen-message">luxury.</span>
+            {/* <span className="welcome-screen-message">endless.</span>
+            <span className="welcome-screen-message">luxury.</span> */}
           </div>
         </div>
       </div>
       <div className="main">
         <div className="main-container">
-          <img src={mainImageSource} alt="close up of a diamond" />
+          <div className="featured-image">
+            <img src={featuredImage} alt="close up of a diamond" />
+          </div>
           <div className="main-message">
             A diamond is made up of just one kind of atom, many times over:
             carbon. Its complete chemical formula is exquisitely simple: C. Yet,
@@ -57,8 +67,30 @@ const Home = () => {
             <br />
             The diamond is in the details.
           </div>
+          <div className="carousel-container">
+            <Carousel
+              infiniteLoop
+              autoPlay
+              showArrows={false}
+              showThumbs={false}
+              showStatus={false}
+            >
+              <div className="image">
+                <img src={image1} alt="Slide" />
+              </div>
+              <div className="image">
+                <img src={image2} alt="Slide" />
+              </div>
+              <div className="image">
+                <img src={image3} alt="Slide" />
+              </div>
+            </Carousel>
+          </div>
+          <div className="shop-now-container">
+            <img src={shopNowImage} alt="Diamond pendant"/>
+          </div>
           <video className="videoTag" autoPlay loop muted>
-            <source src={videoSource} type="video/mp4" />
+            <source src={backgroundVideo} type="video/mp4" />
           </video>
         </div>
       </div>

@@ -4,7 +4,7 @@ import '../styles/nav.scss';
 
 const Nav = () => {
   return (
-    <nav>
+    <nav className="header">
       <ul>
         <li>
           <Link to="/shop" className="tab">shop</Link>

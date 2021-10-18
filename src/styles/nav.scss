@@ -1,41 +1,47 @@
 @use './colors';
 @use './mixins';
+@use './resolutions';
 
 nav {
-  display: flex;
-  justify-content: space-between;
-  margin: 2.5vh 2.5vw 0;
+  @include mixins.nav();
+}
 
-  .brand-name {
-    @include mixins.brand-name();
-    display: flex;
-    align-items: flex-end;
-  }
+.header {
+  margin-top: 2.5vh;
 
   ul {
-    margin: 0; /* To remove default margin */ 
-    padding: 0; /* To remove default left padding */
-    font-family: univers;
-    font-size: 1em;
-    list-style: none;
+    font-size: 1.25em;
     width: 10em;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
   }
 
-  .tab {
-    text-decoration: none;
-    color: colors.$nav-font-color;
-    transition: color 0.15s ease-in-out;
+  @media screen and (max-width: resolutions.$nav-container-width) {
+    ul {
+      font-size: 2.5vw;
+    }
+  }
+}
+
+.footer {
+  margin-bottom: 2.5vh;
+
+  ul {
+    width: 100%;
+    font-size: 1em;
   }
 
-  .tab:hover {
-    color: colors.$hover-font-color;
+  button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
   }
 
-  .tab::selection {
-    @include mixins.selection-color();
+  @media screen and (max-width: resolutions.$nav-container-width) {
+    ul {
+      font-size: 1.75vw;
+    }
   }
 }

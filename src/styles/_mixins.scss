@@ -11,9 +11,39 @@
   user-select: none;
 }
 
-@mixin selection-color() {
-  background-color: colors.$selection-background-color;
-  color: colors.$selection-font-color;
+@mixin nav() {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 2.5vw;
+
+  .brand-name {
+    @include brand-name();
+    display: flex;
+    align-items: flex-end;
+  }
+
+  ul {
+    margin: 0; /* To remove default margin */
+    padding: 0; /* To remove default left padding */
+    font-family: univers;
+    font-size: 1em;
+    list-style: none;
+    width: 10em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .tab {
+    text-decoration: none;
+    color: colors.$nav-font-color;
+    transition: color 0.15s ease-in-out;
+  }
+
+  .tab:hover {
+    color: colors.$hover-font-color;
+  }
 }
 
 @mixin center() {
@@ -24,4 +54,27 @@
   left: 0;
   position: fixed;
   overflow: hidden;
+}
+
+@mixin carousel() {
+  .carousel {
+    display: flex;
+    justify-content: center;
+  }
+
+  .thumb {
+    border: 3px solid colors.$border-color;
+  }
+
+  .thumb.selected,
+  .thumb:hover {
+    border: 3px solid colors.$border-hover-color;
+    cursor: pointer;
+  }
+
+  .dot {
+    background: colors.$control-dot-color;
+    width: 10px;
+    height: 10px;
+  }
 }

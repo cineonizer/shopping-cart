@@ -1,0 +1,6 @@
+@use './colors';
+
+::selection {
+  background-color: colors.$selection-background-color;
+  color: colors.$selection-font-color;
+}
