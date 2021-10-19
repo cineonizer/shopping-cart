@@ -51,7 +51,11 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin: 5vh 0;
+      margin: 5vh 0 0;
+
+      .featured-image {
+        margin-bottom: 10vh;
+      }
 
       img {
         width: resolutions.$main-container-width;
@@ -61,19 +65,42 @@
       .main-message {
         width: resolutions.$main-container-width;
         height: 100%;
-        margin-top: 10vh;
+        margin-bottom: 10vh;
         text-align: center;
-        font-size: 1.3em;
+        font-size: 1.2em;
       }
 
       .carousel-container {
-        margin-top: 10vh;
+        margin-bottom: 10vh;
         width: 100%;
         @include mixins.carousel();
       }
 
-      .shop-now-container {
-        margin-top: 10vh;
+      .shop-button-container {
+        margin-bottom: 10vh;
+        position: relative;
+
+        img {
+          display: block;
+        }
+
+        .shop-button-overlay {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          opacity: 0;
+          transition: 0.3s ease;
+          background-color: colors.$overlay-color;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      .shop-button-container:hover .shop-button-overlay {
+        opacity: 1;
       }
 
       @media screen and (max-width: resolutions.$main-container-width) {
@@ -85,6 +112,14 @@
           width: 100%;
         }
       }
+    }
+
+    button {
+      @include mixins.button();
+    }
+
+    button:hover {
+      @include mixins.buttonhover();
     }
 
     video {

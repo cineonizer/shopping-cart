@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import backgroundVideo from '../assets/videos/film-burns.mp4';
-import featuredImage from '../assets/images/featured.jpeg';
-import shopNowImage from '../assets/images/shopnow.jpeg';
+import featured1 from '../assets/images/featured1.jpeg';
+import featured2 from '../assets/images/featured2.jpeg';
 import image1 from '../assets/images/slide-1.jpeg';
 import image2 from '../assets/images/slide-2.jpeg';
 import image3 from '../assets/images/slide-3.jpeg';
@@ -56,7 +56,7 @@ const Home = () => {
       <div className="main">
         <div className="main-container">
           <div className="featured-image">
-            <img src={featuredImage} alt="close up of a diamond" />
+            <img src={featured1} alt="close up of a diamond" />
           </div>
           <div className="main-message">
             A diamond is made up of just one kind of atom, many times over:
@@ -86,8 +86,11 @@ const Home = () => {
               </div>
             </Carousel>
           </div>
-          <div className="shop-now-container">
-            <img src={shopNowImage} alt="Diamond pendant"/>
+          <div className="shop-button-container">
+            <img src={featured2} alt="close up of a diamond" />
+            <div className="shop-button-overlay">
+              <button>shop now</button>
+            </div>
           </div>
           <video className="videoTag" autoPlay loop muted>
             <source src={backgroundVideo} type="video/mp4" />

@@ -7,7 +7,6 @@
   letter-spacing: -0.11em;
   text-decoration: none;
   color: colors.$brand-name-font-color;
-  margin-right: 1em;
   user-select: none;
 }
 
@@ -77,4 +76,21 @@
     width: 10px;
     height: 10px;
   }
+}
+
+@mixin button() {
+  font-family: univers;
+  font-size: 1.25em;
+  padding: 5px 20px;
+  border: 2px solid colors.$button-hover-color;
+  border-radius: 1em;
+  background-color: transparent;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+  outline: none;
+}
+
+@mixin buttonhover() {
+  background-color: colors.$button-hover-color;
+  color: colors.$button-hover-text-color;
 }
