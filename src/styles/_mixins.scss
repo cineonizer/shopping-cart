@@ -88,6 +88,7 @@
   transition: all 0.15s ease-in-out;
   cursor: pointer;
   outline: none;
+  color: colors.$font-color;
 }
 
 @mixin buttonhover() {

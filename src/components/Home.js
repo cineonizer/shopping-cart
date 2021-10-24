@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import backgroundVideo from '../assets/videos/film-burns.mp4';
 import featured1 from '../assets/images/featured1.jpeg';
 import featured2 from '../assets/images/featured2.jpeg';
@@ -14,7 +15,7 @@ const Home = () => {
     const welcomeScreen = document.querySelector('.welcome-screen-container');
 
     // deactivates the scroll because the user can scroll the div behind
-    // document.body.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
 
     // a function that will translate the welcome screen
     const setTransform = () => {
@@ -48,8 +49,8 @@ const Home = () => {
       <div className="welcome-screen">
         <div className="welcome-screen-container">
           <div className="welcome-screen-message-container">
-            {/* <span className="welcome-screen-message">endless.</span>
-            <span className="welcome-screen-message">luxury.</span> */}
+            <span className="welcome-screen-message">endless.</span>
+            <span className="welcome-screen-message">luxury.</span>
           </div>
         </div>
       </div>
@@ -89,13 +90,15 @@ const Home = () => {
           <div className="shop-button-container">
             <img src={featured2} alt="close up of a diamond" />
             <div className="shop-button-overlay">
-              <button>shop now</button>
+              <Link to="/shop">
+                <button>shop now</button>
+              </Link>
             </div>
           </div>
-          <video className="videoTag" autoPlay loop muted>
-            <source src={backgroundVideo} type="video/mp4" />
-          </video>
         </div>
+        <video className="videoTag" autoPlay loop muted>
+          <source src={backgroundVideo} type="video/mp4" />
+        </video>
       </div>
     </div>
   );
