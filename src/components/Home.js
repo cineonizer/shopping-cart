@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import backgroundVideo from '../assets/videos/film-burns.mp4';
 import featured1 from '../assets/images/featured1.jpeg';
 import featured2 from '../assets/images/featured2.jpeg';
 import image1 from '../assets/images/slide-1.jpeg';
@@ -96,9 +95,6 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <video className="videoTag" autoPlay loop muted>
-          <source src={backgroundVideo} type="video/mp4" />
-        </video>
       </div>
     </div>
   );

@@ -122,10 +122,5 @@
     button:hover {
       @include mixins.buttonhover();
     }
-
-    video {
-      @include mixins.center();
-      z-index: -1;
-    }
   }
 }
