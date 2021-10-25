@@ -4,10 +4,17 @@ import '../styles/shop.scss';
 const ProductCard = ({ data }) => {
   return (
     <div className="card">
-      <img src={data.mainImage} alt="" />
-      <div className="card-designer">{data.designer}</div>
-      <div className="card-title">{data.title}</div>
-      <div className="card-price">{`$${data.price}`}</div>
+      <img
+        src={data.mainImage}
+        alt={data.title}
+        onMouseEnter={(e) => (e.currentTarget.src = data.hoverImage)}
+        onMouseLeave={(e) => (e.currentTarget.src = data.mainImage)}
+      />
+      <div className="info">
+        <div className="designer">{data.designer}</div>
+        <div className="title">{data.title}</div>
+        <div className="price">{`$${data.price}`}</div>
+      </div>
     </div>
   );
 };
@@ -31,8 +38,8 @@ const Shop = () => {
         const cardData = {
           mainImage: product.image1,
           hoverImage: product.image4,
-          designer: product.designer,
-          title: product.title,
+          designer: product.designer.toLowerCase(),
+          title: product.title.toLowerCase(),
           price: product.price,
         };
         return <ProductCard data={cardData} key={product.id} />;

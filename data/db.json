@@ -66,16 +66,17 @@
       "image4": "http://localhost:3001/assets/images/suzanne-kalan/ring-4.png"
     },
     {
-      "id": 22250442025878144,
-      "designer": "Foundrae",
-      "title": "Crescent Gold Diamond Single Earring",
-      "price": 745,
-      "colour": "Gold",
-      "description": "Foundrae ensures every element of its jewellery is symbolic - the crescent on the disk charm of this earring, for instance, represents growth and development. Crafted from gold, it has a long oval shape and eight diamonds illuminating the tiny moon.",
+      "id": 13452677152101383,
+      "designer": "Bleue Burnham",
+      "title": "The Mini Rose Garden Sterling Silver and Sapphire Signet Ring",
+      "price": "485",
+      "colour": "Silver",
+      "description": "Bleue Burnham doesn't just take its inspiration from nature - the brand also uses sustainable practices to create its striking jewellery. This ring is cast from repurposed sterling silver and set with six lab-grown sapphires to represent half a dozen roses.",
       "category": "Fine Jewelry",
-      "image1": "http://localhost:3001/assets/images/foundrae/earring-1.png",
-      "image2": "http://localhost:3001/assets/images/foundrae/earring-2.png",
-      "image3": "http://localhost:3001/assets/images/foundrae/earring-3.png"
+      "image1": "http://localhost:3001/assets/images/bleue-burnham/ring-1.png",
+      "image2": "http://localhost:3001/assets/images/bleue-burnham/ring-2.png",
+      "image3": "http://localhost:3001/assets/images/bleue-burnham/ring-3.png",
+      "image4": "http://localhost:3001/assets/images/bleue-burnham/ring-4.png"
     },
     {
       "id": 11452292645099501,
@@ -104,17 +105,17 @@
       "image4": "http://localhost:3001/assets/images/eera/necklace-4.png"
     },
     {
-      "id": 31432202865445115,
-      "designer": "Piaget",
-      "title": "Possession 18-Karat White Gold Diamond Ring",
-      "price": "1,940",
-      "colour": "Silver",
-      "description": "Piaget's 'Possession' collection is defined by the turning mechanisms incorporated into each design. This ring is made from 18-karat white gold and features signature rotating bands inset with diamonds. Wear it solo or stacked with the rose gold version.",
+      "id": 19971654706595549,
+      "designer": "Foundrae",
+      "title": "Fuerza 18-Karat Gold and Enamel Ring",
+      "price": "1,490",
+      "colour": "Red",
+      "description": "Handmade from 18-karat gold, Foundrae's ring is coloured with traditional champlevé enamelling and etched with the word 'fuerza' - Spanish for 'strength'. Thin and smooth, it's comfortable enough to wear daily.",
       "category": "Fine Jewelry",
-      "image1": "http://localhost:3001/assets/images/piaget/ring-1.png",
-      "image2": "http://localhost:3001/assets/images/piaget/ring-2.png",
-      "image3": "http://localhost:3001/assets/images/piaget/ring-3.png",
-      "image4": "http://localhost:3001/assets/images/piaget/ring-4.png"
+      "image1": "http://localhost:3001/assets/images/foundrae/ring-1.png",
+      "image2": "http://localhost:3001/assets/images/foundrae/ring-2.png",
+      "image3": "http://localhost:3001/assets/images/foundrae/ring-3.png",
+      "image4": "http://localhost:3001/assets/images/foundrae/ring-4.png"
     }
   ]
 }
