@@ -1,23 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import ProductCard from './ProductCard';
 import '../styles/shop.scss';
-
-const ProductCard = ({ data }) => {
-  return (
-    <div className="card">
-      <img
-        src={data.mainImage}
-        alt={data.title}
-        onMouseEnter={(e) => (e.currentTarget.src = data.hoverImage)}
-        onMouseLeave={(e) => (e.currentTarget.src = data.mainImage)}
-      />
-      <div className="info">
-        <div className="designer">{data.designer}</div>
-        <div className="title">{data.title}</div>
-        <div className="price">{`$${data.price}`}</div>
-      </div>
-    </div>
-  );
-};
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
@@ -42,7 +26,11 @@ const Shop = () => {
           title: product.title.toLowerCase(),
           price: product.price,
         };
-        return <ProductCard data={cardData} key={product.id} />;
+        return (
+          <Link to={`/shop/${product.id}`} key={product.id}>
+            <ProductCard data={cardData} />
+          </Link>
+        );
       })}
     </div>
   );
