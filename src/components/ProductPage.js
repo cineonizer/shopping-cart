@@ -10,7 +10,6 @@ const ProductPage = ({ match }) => {
         `http://localhost:3001/products/${match.params.product}`
       );
       const data = await response.json();
-      console.log(data);
       setProduct(data);
     };
     fetchProduct();
@@ -21,6 +20,7 @@ const ProductPage = ({ match }) => {
       <div className="product-container">
         <div className="carousel-container">
           <Carousel
+            infiniteLoop
             showArrows={true}
             showThumbs={true}
             showIndicators={false}
@@ -39,6 +39,13 @@ const ProductPage = ({ match }) => {
               <img src={product.image4} alt="Slide" />
             </div>
           </Carousel>
+        </div>
+        <div className="product-info">
+          <div className="product-designer">{product.designer}</div>
+          <div className="product-title">{product.title}</div>
+          <div className="product-price">{product.price}</div>
+          <div className="product-colour">{product.colour}</div>
+          <div className="product-description">{product.description}</div>
         </div>
       </div>
     </div>
