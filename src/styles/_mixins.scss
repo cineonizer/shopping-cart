@@ -62,12 +62,12 @@
   }
 
   .thumb {
-    border: 3px solid colors.$border-color;
+    border: 2px solid colors.$border-color;
   }
 
   .thumb.selected,
   .thumb:hover {
-    border: 3px solid colors.$border-hover-color;
+    border: 2px solid colors.$border-hover-color;
     cursor: pointer;
   }
 
