@@ -1,17 +1,22 @@
 @use './mixins';
+@use './resolutions';
 
 .product-page {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   margin: 5vh 0;
   width: 100vw;
   height: auto;
+  background: blue;
 
   .product-container {
     display: flex;
-    justify-content: space-evenly;
-    width: 75vw;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 60vw;
     height: auto;
+    background: red;
 
     .carousel-container {
       @include mixins.carousel();
@@ -21,9 +26,34 @@
 
     .product-info {
       width: 25vw;
-      .product-designer {
 
+      .product-designer {
+        font-family: univers;
+        font-size: 2em;
       }
+
+      .product-title {
+        font-family: univers;
+        padding-bottom: 5vh;
+      }
+
+      .product-price {
+        font-family: univers;
+      }
+    }
+
+  }
+  @media screen and (max-width: resolutions.$main-container-width) {
+    .product-container {
+      width: 100vw;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    image {
+      width: 100vw;
+      height: auto;
+      background: green;
     }
   }
 }
