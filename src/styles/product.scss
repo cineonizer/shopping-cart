@@ -1,59 +1,103 @@
 @use './mixins';
+@use './colors';
 @use './resolutions';
 
 .product-page {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 5vh 0;
-  width: 100vw;
-  height: auto;
-  background: blue;
+  margin: 5vh 0 10vh;
+  flex-shrink: 0;
 
   .product-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 60vw;
+    min-width: resolutions.$main-container-width;
     height: auto;
-    background: red;
 
     .carousel-container {
       @include mixins.carousel();
-      width: 27vw;
+      width: 600px;
       height: auto;
     }
 
     .product-info {
-      width: 25vw;
+      width: 550px;
 
       .product-designer {
         font-family: univers;
-        font-size: 2em;
+        font-size: 2.2em;
       }
 
       .product-title {
         font-family: univers;
-        padding-bottom: 5vh;
+        font-size: 1.1em;
+        padding-bottom: 2.5vh;
       }
 
       .product-price {
         font-family: univers;
+        padding-bottom: 2.5vh;
+      }
+
+      .product-colour {
+        padding-bottom: 2.5vh;
+        font-size: 1em;
+      }
+
+      .button-container {
+        button {
+          @include mixins.button();
+          width: 100%;
+          margin-bottom: 2.5vh;
+        }
+
+        button:hover {
+          @include mixins.buttonhover();
+        }
+      }
+
+      .product-description {
+        font-size: 1em;
+      }
+
+      .key {
+        font-family: univers;
+      }
+
+      .value {
+        font-family: Arial, Helvetica, sans-serif;
+        color: colors.$font-opacity-color;
       }
     }
-
   }
   @media screen and (max-width: resolutions.$main-container-width) {
     .product-container {
-      width: 100vw;
-      flex-direction: column;
-      align-items: center;
-    }
+      min-width: 85vw;
 
-    image {
-      width: 100vw;
-      height: auto;
-      background: green;
+      .carousel-container {
+        width: 50vw;
+      }
+
+      .product-info {
+        width: 30vw;
+      }
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .product-container {
+      width: 85vw;
+      flex-direction: column;
+
+      .carousel-container {
+        width: 100%;
+      }
+
+      .product-info {
+        width: 100%;
+      }
     }
   }
 }

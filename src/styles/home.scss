@@ -74,7 +74,8 @@
 
       .carousel-container {
         margin-bottom: 10vh;
-        width: 100%;
+        width: resolutions.$main-container-width;
+        z-index: 0;
         @include mixins.carousel();
       }
 
@@ -110,6 +111,12 @@
           width: 100%;
           height: auto;
         }
+
+        .carousel-container {
+          width: 100%;
+          height: auto;
+        }
+
         .main-message {
           width: 100%;
         }

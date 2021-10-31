@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import '../styles/product.scss';
 
@@ -49,8 +50,22 @@ const ProductPage = ({ match }) => {
           <div className="product-designer">{product.designer}</div>
           <div className="product-title">{product.title}</div>
           <div className="product-price">{`$${product.price}`}</div>
-          <div className="product-colour">{product.colour}</div>
-          <div className="product-description">{product.description}</div>
+          <div className="product-colour">
+            <span className="key">colour: </span>
+            <span className="value">{product.colour}</span>
+          </div>
+          <div className="button-container">
+            <Link to="/cart">
+              <button>add to cart</button>
+            </Link>
+            <Link to="/shop">
+              <button>keep shopping</button>
+            </Link>
+          </div>
+          <div className="product-description">
+            <span className="key">notes: </span>
+            <span className="value">{product.description}</span>
+          </div>
         </div>
       </div>
     </div>

@@ -56,18 +56,23 @@
 }
 
 @mixin carousel() {
-  .carousel {
+  .thumbs-wrapper {
     display: flex;
     justify-content: center;
   }
 
+  .thumbs {
+    padding-left: 6px;
+  }
+
   .thumb {
-    border: 2px solid colors.$border-color;
+    border: 1px solid colors.$border-color;
+    padding: 4px;
   }
 
   .thumb.selected,
   .thumb:hover {
-    border: 2px solid colors.$border-hover-color;
+    border: 1px solid colors.$border-hover-color;
     cursor: pointer;
   }
 
@@ -75,6 +80,7 @@
     background: colors.$control-dot-color;
     width: 10px;
     height: 10px;
+    z-index: 0;
   }
 }
 
