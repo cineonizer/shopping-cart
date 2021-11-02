@@ -25,9 +25,7 @@
     margin: 0; /* To remove default margin */
     padding: 0; /* To remove default left padding */
     font-family: univers;
-    font-size: 1em;
     list-style: none;
-    width: 10em;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -38,6 +36,15 @@
     text-decoration: none;
     color: colors.$nav-font-color;
     transition: color 0.15s ease-in-out;
+    position: relative;
+
+    sup {
+      font-size: 0.8em;
+      top: -0.5em;
+      vertical-align: top;
+      position: absolute;
+      transition: border 0.15s ease-in-out;
+    }
   }
 
   .tab:hover {
@@ -66,13 +73,13 @@
   }
 
   .thumb {
-    border: 1px solid colors.$border-color;
+    border: 2px solid colors.$border-color;
     padding: 4px;
   }
 
   .thumb.selected,
   .thumb:hover {
-    border: 1px solid colors.$border-hover-color;
+    border: 2px solid colors.$border-hover-color;
     cursor: pointer;
   }
 

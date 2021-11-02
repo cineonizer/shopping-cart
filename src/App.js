@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import HeaderNav from './components/HeaderNav';
 import FooterNav from './components/FooterNav';
@@ -9,6 +10,8 @@ import backgroundVideo from './assets/videos/film-burns.mp4';
 import './styles/App.scss';
 
 const App = () => {
+  const [cart, setCart] = useState([]);
+
   return (
     <Router>
       <HeaderNav />
@@ -16,7 +19,7 @@ const App = () => {
         <Route path="/" exact component={Home} />
         <Route path="/about" component={About} />
         <Route path="/shop" exact component={Shop} />
-        <Route path="/shop/:product" component={ProductPage}/>
+        <Route path="/shop/:product" component={ProductPage} />
       </Switch>
       <FooterNav />
       <video className="videoTag" autoPlay loop muted>

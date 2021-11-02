@@ -11,6 +11,7 @@ const ProductPage = ({ match }) => {
         `http://localhost:3001/products/${match.params.product}`
       );
       const data = await response.json();
+      // convert all the json values to be lowercase to fit the aesthetic
       Object.entries(data).forEach((entry) => {
         if (typeof entry[1] === 'string') {
           data[entry[0]] = entry[1].toLowerCase();
@@ -51,13 +52,18 @@ const ProductPage = ({ match }) => {
           <div className="product-title">{product.title}</div>
           <div className="product-price">{`$${product.price}`}</div>
           <div className="product-colour">
-            <span className="key">colour: </span>
-            <span className="value">{product.colour}</span>
+            <div className="product-colour-text">
+              <span className="key">colour: </span>
+              <span className="value">{product.colour}</span>
+            </div>
+            <div className="qty">
+              <button>-</button>
+              <input type="number" min="0" max="100" value="1"></input>
+              <button>+</button>
+            </div>
           </div>
           <div className="button-container">
-            <Link to="/cart">
-              <button>add to cart</button>
-            </Link>
+            <button>add to cart</button>
             <Link to="/shop">
               <button>keep shopping</button>
             </Link>

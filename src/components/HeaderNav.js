@@ -11,6 +11,11 @@ const Nav = () => {
         <Link to="/shop" className="tab">
           <li>shop</li>
         </Link>
+        <Link to="/cart" className="tab">
+          <li>
+            cart <sup>{0}</sup>
+          </li>
+        </Link>
       </ul>
       <Link to="/" className="brand-name">
         endless
