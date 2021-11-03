@@ -102,6 +102,7 @@
   cursor: pointer;
   outline: none;
   color: colors.$font-color;
+  user-select: none;
 }
 
 @mixin buttonhover() {

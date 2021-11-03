@@ -14,12 +14,15 @@ const App = () => {
 
   return (
     <Router>
-      <HeaderNav />
+      <HeaderNav cartQty={cart.length} />
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/about" component={About} />
         <Route path="/shop" exact component={Shop} />
-        <Route path="/shop/:product" component={ProductPage} />
+        <Route
+          path="/shop/:product"
+          render={(props) => <ProductPage {...props} cart={cart} setCart={setCart} />}
+        />
       </Switch>
       <FooterNav />
       <video className="videoTag" autoPlay loop muted>

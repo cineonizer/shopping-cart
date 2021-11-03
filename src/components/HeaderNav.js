@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import '../styles/nav.scss';
 
-const Nav = () => {
+const Nav = ({ cartQty }) => {
   return (
     <nav className="header">
       <ul>
@@ -13,7 +13,7 @@ const Nav = () => {
         </Link>
         <Link to="/cart" className="tab">
           <li>
-            cart <sup>{0}</sup>
+            cart <sup>{cartQty}</sup>
           </li>
         </Link>
       </ul>
