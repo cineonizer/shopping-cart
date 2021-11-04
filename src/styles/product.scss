@@ -7,7 +7,6 @@
   flex-direction: row;
   justify-content: center;
   margin: 5vh 0 10vh;
-  flex-shrink: 0;
 
   .product-container {
     display: flex;
@@ -121,7 +120,7 @@
       .carousel-container {
         width: 50vw;
       }
-      
+
       .product-info {
         width: 30vw;
 

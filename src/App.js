@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Shop from './components/Shop';
 import About from './components/About';
 import ProductPage from './components/ProductPage';
+import Cart from './components/Cart';
 import backgroundVideo from './assets/videos/film-burns.mp4';
 import './styles/App.scss';
 
@@ -23,6 +24,7 @@ const App = () => {
           path="/shop/:product"
           render={(props) => <ProductPage {...props} cart={cart} setCart={setCart} />}
         />
+        <Route path="/cart" render={(props) => <Cart {...props} cart={cart} />} />
       </Switch>
       <FooterNav />
       <video className="videoTag" autoPlay loop muted>
