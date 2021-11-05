@@ -1,46 +1,101 @@
 @use './resolutions';
+@use './colors';
 
 .cart {
+  height: auto;
   display: flex;
   justify-content: center;
   flex-direction: row;
+  margin: 5vh 0;
 
   .cart-container {
     width: resolutions.$cart-container-width;
-    height: 100vh;
-    margin: 5vh 0;
+    min-height: 100vh;
     display: flex;
     flex-direction: row;
 
-    .items {
+    .col {
       width: 1100px;
       height: auto;
       display: flex;
       flex-direction: column;
-      background-color: red;
 
-      .title {
+      .header-title {
         font-family: univers;
         font-size: 3em;
+        margin-top: 20px;
       }
       
-      .quantity {
+      .header-qty {
         font-family: Arial, Helvetica, sans-serif;
         font-size: 1.2em;
+        margin-bottom: 20px;
+      }
+
+      .item {
+        margin: 2vh 0 2.5vh 50px;
+        display: flex;
+        flex-direction: row;
+
+        img {
+          width: 100px;
+          height: auto;
+          margin-right: 25px;
+        }
+
+        .product {
+          display: flex;
+          flex-direction: column;
+
+          .designer {
+            font-family: univers;
+            font-size: 1.2em;
+          }
+
+          .title {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.9em;
+            color: colors.$font-opacity-color;
+          }
+
+          .colour {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.9em;
+            color: colors.$font-opacity-color;
+            padding: 22.5px 0 2.5px;
+          }
+
+          .qty {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.9em;
+            color: colors.$font-opacity-color;
+          }
+
+          .price {
+            display: flex;
+            align-items: flex-end;
+            height: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.9em;
+          }
+        }
       }
     }
 
     .summary {
       width: 300px;
       height: auto;
-      background-color: blue;
+      padding-left: 50px;
+      margin: 15vh 0;
+      font-family: univers;
+      font-size: 1.25em;
     }
   }
 
   hr {
-    height: 2px;
-    color: black;
-    background: black;
+    height: 1px;
+    color: colors.$line-color;
+    background: colors.$line-color;
     border: 0;
     width: 100%;
   }
