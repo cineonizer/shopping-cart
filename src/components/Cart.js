@@ -1,6 +1,28 @@
+import React, { useState, useEffect } from 'react';
 import '../styles/cart.scss';
 
 const Cart = ({ cart }) => {
+  const [subtotal, setSubtotal] = useState(0)
+  const [shippingCost, setShippingCost] = useState(0)
+  const [total, setTotal] = useState(0)
+
+  const handleCheckoutBtnClick = () => {
+    alert('This is the end of my shopping cart project. Thanks for checking it out!')
+  }
+
+  useEffect(() => {
+    if (cart.length) {
+      // reduce the objects (price times quantity) in the array to an int
+      const sumOfPrices = cart.reduce((accumulator, objCart) => {
+        return accumulator + parseInt(objCart.price.replace(/,/g, '')) * parseInt(objCart.quantity)
+      }, 0)
+      // convert int to string specifically a localestring for the comma
+      setSubtotal(sumOfPrices)
+      setTotal(sumOfPrices + shippingCost)
+    }
+  }, [cart])
+
+
   return (
     <div className="cart">
       <div className="cart-container">
@@ -26,7 +48,19 @@ const Cart = ({ cart }) => {
             )
           })}
         </div>
-        <div className="summary">order summary</div>
+        <div className="review">
+          <div className="summary">order summary</div>
+          <div className="subtotal">item sub-total
+            <span>{`$${subtotal.toLocaleString()}`}</span>
+          </div>
+          <div className="shipping">shipping
+            <span>free</span>
+          </div>
+          <div className="total">total (usd)
+            <span>{`$${total.toLocaleString()}`}</span>
+          </div>
+          <button onClick={handleCheckoutBtnClick}>proceed to checkout</button>
+        </div>
       </div>
     </div>
   )

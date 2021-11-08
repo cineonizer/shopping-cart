@@ -1,5 +1,6 @@
 @use './resolutions';
 @use './colors';
+@use './mixins';
 
 .cart {
   height: auto;
@@ -25,7 +26,7 @@
         font-size: 3em;
         margin-top: 20px;
       }
-      
+
       .header-qty {
         font-family: Arial, Helvetica, sans-serif;
         font-size: 1.2em;
@@ -82,13 +83,46 @@
       }
     }
 
-    .summary {
-      width: 300px;
+    .review {
+      width: 500px;
       height: auto;
       padding-left: 50px;
       margin: 15vh 0;
       font-family: univers;
-      font-size: 1.25em;
+      display: flex;
+      flex-direction: column;
+      font-size: 1em;
+
+      .summary {
+        font-size: 1.4em;
+        margin-bottom: 2.5vh;
+      }
+
+      .subtotal {
+        margin-bottom: 2.5vh;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .shipping {
+        margin-bottom: 2.5vh;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .total {
+        margin-bottom: 2.5vh;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      button {
+        @include mixins.button();
+      }
+
+      button:hover {
+        @include mixins.buttonhover();
+      }
     }
   }
 
@@ -98,5 +132,40 @@
     background: colors.$line-color;
     border: 0;
     width: 100%;
+  }
+
+  @media screen and (max-width: resolutions.$cart-container-width) {
+    .cart-container {
+      width: 85%;
+
+      .col {
+        width: 85vw;
+      }
+
+      .review {
+        width: 500px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    .cart-container {
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 75vh;
+      width: 100%;
+
+      .col {
+        width: 85vw;
+        margin: 0 0 2.5vh;
+      }
+
+      .review {
+        padding: 0 0 0;
+        width: 85vw;
+        margin: 0;
+      }
+    }
   }
 }
