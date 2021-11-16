@@ -44,9 +44,10 @@
           margin-right: 25px;
         }
 
-        .product {
+        .cart-info {
           display: flex;
           flex-direction: column;
+          width: 350px;
 
           .designer {
             font-family: univers;
@@ -78,6 +79,18 @@
             height: 100%;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 0.9em;
+          }
+
+          button {
+            @include mixins.button();
+            margin-top: 25px;
+            font-size: 0.9em;
+            padding: 5px 0;
+            width: 7.5em;
+          }
+    
+          button:hover {
+            @include mixins.buttonhover();
           }
         }
       }
@@ -139,7 +152,7 @@
       width: 85%;
 
       .col {
-        width: 85vw;
+        width: 100vw;
       }
 
       .review {

@@ -1,25 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/cart.scss';
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart, setCart }) => {
   const [subtotal, setSubtotal] = useState(0)
   const [shippingCost, setShippingCost] = useState(0)
   const [total, setTotal] = useState(0)
+
+  const handleRemoveBtnClick = (removedProduct) => {
+    const updatedCart = cart.filter((product) => product.id !== removedProduct.id);
+    setCart(updatedCart);
+  }
 
   const handleCheckoutBtnClick = () => {
     alert('This is the end of my shopping cart project. Thanks for checking it out!')
   }
 
   useEffect(() => {
-    if (cart.length) {
-      // reduce the objects (price times quantity) in the array to an int
-      const sumOfPrices = cart.reduce((accumulator, objCart) => {
-        return accumulator + parseInt(objCart.price.replace(/,/g, '')) * parseInt(objCart.quantity)
-      }, 0)
-      // convert int to string specifically a localestring for the comma
-      setSubtotal(sumOfPrices)
-      setTotal(sumOfPrices + shippingCost)
-    }
+    // reduce the objects (price times quantity) in the array to an int
+    const sumOfPrices = cart.reduce((accumulator, objCart) => {
+      return accumulator + parseInt(objCart.price.replace(/,/g, '')) * parseInt(objCart.quantity)
+    }, 0)
+    // convert int to string specifically a localestring for the comma
+    setSubtotal(sumOfPrices)
+    setTotal(sumOfPrices + shippingCost)
   }, [cart])
 
 
@@ -35,12 +38,13 @@ const Cart = ({ cart }) => {
               <div>
                 <div className="item">
                   <img src={product.image1} alt="" />
-                  <div className="product">
+                  <div className="cart-info">
                     <div className="designer">{product.designer}</div>
                     <div className="title">{product.title}</div>
                     <div className="colour">{`colour: ${product.colour}`}</div>
                     <div className="qty">{` qty: ${product.quantity}`}</div>
                     <div className="price">{`$${product.price}`}</div>
+                    <button onClick={() => { handleRemoveBtnClick(product) }}>remove</button>
                   </div>
                 </div>
                 <hr />

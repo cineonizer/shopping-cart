@@ -28,7 +28,7 @@ const App = () => {
         />
         <Route
           path="/cart"
-          render={(props) => <Cart {...props} cart={cart} />}
+          render={(props) => <Cart {...props} cart={cart} setCart={setCart} />}
         />
       </Switch>
       <FooterNav />
