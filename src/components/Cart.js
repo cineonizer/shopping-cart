@@ -6,8 +6,8 @@ const Cart = ({ cart, setCart }) => {
   const [shippingCost, setShippingCost] = useState(0)
   const [total, setTotal] = useState(0)
 
-  const handleRemoveBtnClick = (removedProduct) => {
-    const updatedCart = cart.filter((product) => product.id !== removedProduct.id);
+  const handleRemoveBtnClick = (productToBeRemoved) => {
+    const updatedCart = cart.filter((product) => product.id !== productToBeRemoved.id);
     setCart(updatedCart);
   }
 
@@ -24,7 +24,6 @@ const Cart = ({ cart, setCart }) => {
     setSubtotal(sumOfPrices)
     setTotal(sumOfPrices + shippingCost)
   }, [cart])
-
 
   return (
     <div className="cart">

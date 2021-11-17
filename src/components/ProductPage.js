@@ -52,7 +52,8 @@ const ProductPage = ({ match, cart, setCart }) => {
       const data = await response.json();
       // convert all the json values to be lowercase to fit the aesthetic
       Object.entries(data).forEach((entry) => {
-        if (typeof entry[1] === 'string') {
+        // however don't lowercase the urls because links are case sensitive
+        if (!entry[0].includes('image') && typeof entry[1] === 'string') {
           data[entry[0]] = entry[1].toLowerCase();
         }
       });

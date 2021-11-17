@@ -18,7 +18,7 @@ const App = () => {
       <HeaderNav cartQty={cart.length} />
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/about" component={About} />
+        <Route path="/" component={About} />
         <Route path="/shop" exact component={Shop} />
         <Route
           path="/shop/:product"
