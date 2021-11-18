@@ -17,7 +17,7 @@ const Nav = ({ cartQty }) => {
           </li>
         </Link>
       </ul>
-      <Link to="/" className="brand-name">
+      <Link to="/shopping-cart" className="brand-name">
         endless
       </Link>
     </nav>
