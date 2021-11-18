@@ -22,9 +22,9 @@ Build a multi-page shopping website using React framework and its Router functio
 
 ## Learning Outcomes
 
-* Learned about routing in React and how to implement a routing system.
-* Installed and utilizied SASS/SCSS in this project.
-* Learned to write and deploy my own fake REST API using JSON Server library.
-* Learned to take advantage of a carousel library.
+* Learned about routing in React and routing system to create a multi-page website.
+* Learned about SASS/SCSS and utilized in this project for better application of CSS.
+* Learned to write and deploy my own fake REST API using JSON Server npm library.
+* Learned to take advantage of a carousel npm library.
 * Practiced and became more comfortable of CSS media queries to handle dynamic window sizing.
 * Used CSS keyframes to animate the welcome landing page.
