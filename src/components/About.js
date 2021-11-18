@@ -1,16 +1,25 @@
 import '../styles/about.scss';
+import logo from '../assets/images/logo.png';
 
 const About = () => {
   return (
     <div className="about">
-      <div className="about-message">
-        A diamond is made up of just one kind of atom, many times over: carbon.
-        Its complete chemical formula is exquisitely simple: C. Yet, as a matter
-        of chemical fact, the same carbon atoms, differently arranged, yield not
-        a sparkling diamond, but gray pencil lead.
-        <br />
-        <br />
-        The diamond is in the details.
+      <div className="about-container">
+        <div className="about-message">
+          There was a time when Andy Warhol would carry priceless diamonds in
+          his breast pocket - close to him but invisible, just for the hell and
+          thrill of it. That is the power and lure of jewellery. We want you to
+          feel that exhilarating thrill Warhol felt. We want you to feel that
+          endlessly.
+          <br />
+          <br />
+          Endless, which represents the unlimited statements of jewelry, is an
+          independent American luxury company. All the pieces are handmade in
+          Italy and inspired by "childhood obsessions," and "heritage as a
+          fantasy."
+        </div>
+        {/* <div className="brand-name">endless</div> */}
+        <img src={logo} alt="endless logo" />
       </div>
     </div>
   );
