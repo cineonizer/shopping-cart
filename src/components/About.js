@@ -18,7 +18,6 @@ const About = () => {
           Italy and inspired by "childhood obsessions," and "heritage as a
           fantasy."
         </div>
-        {/* <div className="brand-name">endless</div> */}
         <img src={logo} alt="endless logo" />
       </div>
     </div>
