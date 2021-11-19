@@ -47,7 +47,7 @@ const ProductPage = ({ match, cart, setCart }) => {
   useEffect(() => {
     const fetchProduct = async () => {
       const response = await fetch(
-        `http://localhost:3001/products/${match.params.product}`
+        `https://my-json-server.typicode.com/cineonizer/shopping-cart-data/products/${match.params.product}`
       );
       const data = await response.json();
       // convert all the json values to be lowercase to fit the aesthetic
