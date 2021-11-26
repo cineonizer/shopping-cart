@@ -9,8 +9,7 @@ const Shop = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      // const response = await fetch('https://my-json-server.typicode.com/cineonizer/shopping-cart-data/products');
-      const response = await fetch('http://localhost:3001/products');
+      const response = await fetch('https://my-json-server.typicode.com/cineonizer/shopping-cart-data/products');
       const data = await response.json();
       setProducts(data);
     };
