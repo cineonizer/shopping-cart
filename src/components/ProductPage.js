@@ -53,9 +53,14 @@ const ProductPage = ({ match, cart, setCart }) => {
       // convert all the json values to be lowercase to fit the aesthetic
       Object.entries(data).forEach((entry) => {
         // however don't lowercase the urls because links are case sensitive
-        if (!entry[0].includes('image') && typeof entry[1] === 'string') {
-          data[entry[0]] = entry[1].toLowerCase();
-        }
+        data[entry[0]] =
+          !entry[0].includes('image') && typeof entry[1] === 'string'
+            ? entry[1].toLowerCase()
+            : entry[1];
+        data[entry[0]] =
+          entry[0] === 'price'
+            ? (data[entry[0]] = entry[1].toLocaleString())
+            : entry[1];
       });
       setProduct(data);
     };

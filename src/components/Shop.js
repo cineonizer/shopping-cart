@@ -24,7 +24,7 @@ const Shop = () => {
           hoverImage: product.image4,
           designer: product.designer.toLowerCase(),
           title: product.title.toLowerCase(),
-          price: product.price,
+          price: product.price.toLocaleString(),
         };
         return (
           <Link to={`/shop/${product.id}`} key={product.id}>
