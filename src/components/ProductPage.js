@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
+import { getProductImage } from './Helper';
 import '../styles/product.scss';
 
 const ProductPage = ({ match, cart, setCart }) => {
@@ -46,8 +47,11 @@ const ProductPage = ({ match, cart, setCart }) => {
 
   useEffect(() => {
     const fetchProduct = async () => {
+      // const response = await fetch(
+      //   `https://my-json-server.typicode.com/cineonizer/shopping-cart-data/products/${match.params.product}`
+      // );
       const response = await fetch(
-        `https://my-json-server.typicode.com/cineonizer/shopping-cart-data/products/${match.params.product}`
+        `http://localhost:3001/products/${match.params.product}`
       );
       const data = await response.json();
       // convert all the json values to be lowercase to fit the aesthetic
@@ -57,10 +61,9 @@ const ProductPage = ({ match, cart, setCart }) => {
           !entry[0].includes('image') && typeof entry[1] === 'string'
             ? entry[1].toLowerCase()
             : entry[1];
-        data[entry[0]] =
-          entry[0] === 'price'
-            ? (data[entry[0]] = entry[1].toLocaleString())
-            : entry[1];
+      });
+      ['image1', 'image2', 'image3', 'image4'].forEach((el) => {
+        data[el] = getProductImage(data.designer, el);
       });
       setProduct(data);
     };

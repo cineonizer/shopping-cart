@@ -2,10 +2,10 @@ const ProductCard = ({ data }) => {
   return (
     <div className="card">
       <img
-        src={data.mainImage}
+        src={data.image1}
         alt={data.title}
-        onMouseEnter={(e) => (e.currentTarget.src = data.hoverImage)}
-        onMouseLeave={(e) => (e.currentTarget.src = data.mainImage)}
+        onMouseEnter={(e) => (e.currentTarget.src = data.image4)}
+        onMouseLeave={(e) => (e.currentTarget.src = data.image1)}
       />
       <div className="info">
         <div className="designer">{data.designer}</div>
